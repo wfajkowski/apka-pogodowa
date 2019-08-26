@@ -1,3 +1,34 @@
 body {
     background-color: rgb(145, 145, 145);
 }
+
+
+.search-form {
+    max-width: 30vw;
+    display: grid;
+    padding: 0;
+}
+
+.sugestedList {
+    grid: 1 fr;
+    list-style-type: none;
+    border: 1px solid rgb(27, 27, 27);
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    box-sizing: border-box;
+    width: 100%;
+    position:relative
+}
+
+.name {
+    display: block;
+    padding: 5px;
+    margin: 0;
+}
+
+.name:hover {
+    background-color: blue;
+}

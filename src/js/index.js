@@ -1,25 +1,24 @@
 import '../css/style.css';
 import CitiesFinder from './CitiesFinder.js';
+import '../../res/citiesPL.json';
 
 const finder = new CitiesFinder();
-// finder.getCities('h');
+const input = document.querySelector('.input');
+const selectedPlace = document.querySelector('.sugestedList');
 
-// const button = document.querySelector('#button');
-const field = document.querySelector('#input');
-const result = document.querySelector('.result');
-function display(){
-    // console.log(this.value)
-    const matchArr = finder.getCities(this.value);
-    console.log(matchArr)
 
-    // const html = matchArr.map(place =>{
-    //     return `
-    //     <li>
-    //         <span>${place.name}</span>
-    //     </li>
-    //     `
-    // })
-    // result.innerHTML = html;
+function display() {
+    finder.getCities(this.value);
 }
 
-field.addEventListener('keyup',display)
+function getCityId() {
+    finder.getCityId(selectedPlace);
+}
+
+export function returnCityId(id) {
+    console.log(id);
+}
+
+input.addEventListener('keyup', display);
+input.addEventListener('change', display);
+selectedPlace.addEventListener('click', getCityId);

@@ -30,4 +30,5 @@ form.addEventListener('submit', event => {
     // const result = data.then(console.log('jest'));
     // console.log("result", result[0]);
     weather.displayData();
+    // weather.makeRequest();
 });

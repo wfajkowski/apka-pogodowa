@@ -31,6 +31,7 @@ export default class APIrequest {
         const wheaterInfo = document.querySelector(".wheater-info");
         const temp = document.querySelector(".temp");
 
+
          this.makeRequest()
            .then(res => {
              let result = [];
@@ -40,7 +41,7 @@ export default class APIrequest {
              return result;
            })
            .then((res) => {
-                console.log(JSON.stringify(res));
+                // weatherVars.push(JSON.stringify(res))
                 temp.innerHTML = JSON.stringify(res[0].temp) + "°C";
                 icon.src = `http://openweathermap.org/img/w/${res[2][0].icon}.png`;
                 wheaterInfo.innerHTML = `

@@ -1,6 +1,5 @@
 import '../css/style.css';
 import CitiesFinder from './CitiesFinder.js';
-import '../../res/citiesPL.json';
 
 const finder = new CitiesFinder();
 const input = document.querySelector('.input');

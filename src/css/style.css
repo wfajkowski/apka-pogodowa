@@ -2,11 +2,26 @@ body {
     background-color: rgb(145, 145, 145);
 }
 /*temporary styles start*/
-
+header {
+    background-image: url("./img/XD.jpg");
+}
+.searching-field {
+    display: block;
+    width: auto;
+    max-width: 30vw;
+    position: relative;
+    align-content: center;
+}
 .search-form {
+    width: auto;
     max-width: 30vw;
     display: grid;
     padding: 0;
+    grid-template-areas: "search-bar search-bar search-bar search-bar"
+                         "sugestedList sugestedList sugestedList sugestedList"
+                         "checkbox find-me search .";
+    grid-template-columns: repeat(1fr, 4);
+    grid-template-rows: 35px 1fr 30px;
 }
 .search-form button {
     max-width: 10vw;
@@ -16,12 +31,26 @@ body {
 .sugestedList {
     grid: 1 fr;
     list-style-type: none;
+    background-color: aquamarine;
     border: 1px solid rgb(27, 27, 27);
     padding: 0;
     margin: 0;
-    position: absolute;
+    position: re;
+    top: 20px;
+    grid-area: sugestedList;
 }
-
+#checkbox {
+    grid-area: checkbox
+}
+#find-me {
+    grid-area: find-me
+}
+#search-bar {
+    grid-area: search-bar
+}
+#search {
+    grid-area: search
+}
 li {
     box-sizing: border-box;
     width: 100%;

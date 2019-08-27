@@ -3,7 +3,7 @@ body {
 }
 /*temporary styles start*/
 header {
-    background-image: url("./img/XD.jpg");
+    background-image: url("../img/XD.jpg");
 }
 .searching-field {
     display: block;

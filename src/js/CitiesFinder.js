@@ -1,4 +1,5 @@
 var latinize = require('latinize');
+import '../../res/citiesPL.json';
 import {
     returnCityId
 } from './index.js';
@@ -10,7 +11,7 @@ export default class CitiesFinder {
     }
 
     getCities(phrase) {
-        fetch("../../res/citiesPL.json")
+        fetch('../../res/citiesPL.json')
             .then(res => res.json())
             .then(data => {
                 this.cities = [];

@@ -1,6 +1,5 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/js/index.js',
@@ -28,9 +27,6 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: 'src/index.html'
-        }),
-        new CopyPlugin([
-            { from: 'res/citiesPL.json', to: 'apka-pogodowa/dist/res' }
-        ])
+        })
     ]
 }

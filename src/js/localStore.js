@@ -1,24 +1,15 @@
 
 const field = document.querySelector('#search-bar');
+const checkbox = document.getElementById('checkbox');
 
-var mainCity = JSON.parse(localStorage.getItem('deafultCity')) || [];
+export function load_(){
+  var load = JSON.parse(localStorage.getItem("defaultCity"));
+  defaultValue.city = load.city
+}
 
-localStorage.setItem('defaultCity', mainCity);
-
-const checkbox = document.getElementById('checkbox')
-const search = document.getElementById('search')
-search.addEventListener('click', setDefault)
-
-function setDefault(e) {
+export function save_(e){
   e.preventDefault();
   if (checkbox.checked == true){
-    localStorage.setItem('defaultCity', `${field.value}`);
+  localStorage.setItem("defaultCity",JSON.stringify(`${field.value}`));
   }
 }
-
-var mainCity1;
-
-function load_(){
-	mainCity = localStorage.getItem('deafultCity') || [];
-}
-

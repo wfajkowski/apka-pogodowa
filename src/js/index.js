@@ -1,5 +1,6 @@
 import '../css/style.css';
 import CitiesFinder from './CitiesFinder.js';
+import { geoFindMe } from './geolocation.js';
 
 const finder = new CitiesFinder();
 const input = document.querySelector('.input');
@@ -22,3 +23,4 @@ export function returnCityId(id) {
 input.addEventListener('keyup', display);
 input.addEventListener('change', display);
 selectedPlace.addEventListener('click', getCityId);
+document.querySelector('#find-me').addEventListener('click', geoFindMe);

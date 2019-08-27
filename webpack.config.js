@@ -30,7 +30,7 @@ module.exports = {
             template: 'src/index.html'
         }),
         new CopyPlugin([
-            { from: 'res/citiesPL.json', to: 'res' }
+            { from: 'res/citiesPL.json', to: 'apka-pogodowa/dist/res' }
         ])
     ]
 }

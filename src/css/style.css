@@ -8,6 +8,10 @@ body {
     display: grid;
     padding: 0;
 }
+.search-form button {
+    max-width: 10vw;
+    display: inline-block;
+}
 
 .sugestedList {
     grid: 1 fr;

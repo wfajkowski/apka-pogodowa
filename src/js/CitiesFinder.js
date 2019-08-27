@@ -1,5 +1,4 @@
 var latinize = require('latinize');
-import '../../res/citiesPL.json';
 import {
     returnCityId
 } from './index.js';

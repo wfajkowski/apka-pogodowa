@@ -15,6 +15,7 @@ function getCityId() {
     finder.getCityId(selectedPlace);
 }
 
+// temporary function to get selected city id
 export function returnCityId(id) {
     console.log(id);
 }

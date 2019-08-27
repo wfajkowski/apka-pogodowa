@@ -1,8 +1,7 @@
 body {
     background-color: rgb(145, 145, 145);
 }
-
-
+/*temporary styles start*/
 .search-form {
     max-width: 30vw;
     display: grid;
@@ -32,3 +31,4 @@ li {
 .name:hover {
     background-color: blue;
 }
+/*temporary styles end*/

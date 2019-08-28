@@ -1,55 +1,93 @@
+html {
+    font-size: 20px;
+}
 body {
     background-color: rgb(145, 145, 145);
+    margin: 0;
 }
 /*temporary styles start*/
 header {
     background-image: url("../img/XD.jpg");
+    width: auto;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+.searching-box {
+    background-color: rgba(0, 0, 0, 0.575);
+    width: 30%;
+    position: relative;
+    display: block;
+    top: 30%;
+    margin: 0 auto;
+    min-width: 290px;
+    padding: 20px;
+}
+.searching-logo {
+    background-image: url("../img/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
 }
 .searching-field {
-    display: block;
-    width: auto;
     max-width: 30vw;
-    position: relative;
-    align-content: center;
+    text-align: center;
+}
+.searching-text h2{
+    font-size: 50px;
+    margin: 0;
+    text-align: center;
+    color: white;
+    top: 50%;
+    display: block;
 }
 .search-form {
-    width: auto;
-    max-width: 30vw;
+    position: relative;
+    min-width: 290px;
     display: grid;
     padding: 0;
-    grid-template-areas: "search-bar search-bar search-bar search-bar"
-                         "sugestedList sugestedList sugestedList sugestedList"
-                         "checkbox find-me search .";
-    grid-template-columns: repeat(1fr, 4);
-    grid-template-rows: 35px 1fr 30px;
+    grid-template-areas: ". . . . . ."
+                         ". search-bar search-bar search-bar search-bar ."
+                         ". sugestedList sugestedList sugestedList sugestedList ."
+                         ". . find-me search . ."
+                         ". . . . . .";
+    grid-template-columns:  repeat(1fr, 6);
+    grid-template-rows: 15px 35px 1fr 50px 5px;
 }
 .search-form button {
     max-width: 10vw;
     display: inline-block;
+    min-width: 84px;
+    margin: 10px 3px;
 }
 
 .sugestedList {
-    grid: 1 fr;
     list-style-type: none;
-    background-color: white;
-    border: 1px solid rgb(145, 145, 145);
+    background-color: aquamarine;
+    border: 1px solid rgb(27, 27, 27);
     padding: 0;
     margin: 0;
-    overflow: scroll;
-    overflow-x: hidden;
-    top: 20px;
     grid-area: sugestedList;
+    position: absolute;
     max-height: 300px;
-    display: none;
+    overflow: hidden;
+    
 }
 #checkbox {
-    grid-area: checkbox
+    grid-area: checkbox;
+    margin: 0;
+    position: absolute;
+    top: 27px;
+    right: 10%;
 }
 #find-me {
     grid-area: find-me
 }
 #search-bar {
-    grid-area: search-bar
+    grid-area: search-bar;
+    min-width: 250px;
+    position: relative;
 }
 #search {
     grid-area: search
@@ -57,7 +95,8 @@ header {
 li {
     box-sizing: border-box;
     width: 100%;
-    position:relative
+    position:relative;
+    border: rgba(71, 71, 71, 0.384) 1px solid;
 }
 
 .name {
@@ -67,6 +106,22 @@ li {
 }
 
 .name:hover {
-    background-color: rgb(144, 182, 109);
+    background-color: blue;
 }
 /*temporary styles end*/
+nav {
+    background-color: rgba(0, 0, 0, 0.719);
+    width: 100vw;
+    height: 60px;
+    position: fixed;
+}
+nav h3 {
+    color: #fff;
+    font-size: 40px;
+    margin: 0;
+    float: right;
+}
+nav img {
+    height: 50px;
+    margin: 5px 0 5px 20px;
+}

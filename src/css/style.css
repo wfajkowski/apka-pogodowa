@@ -31,13 +31,16 @@ header {
 .sugestedList {
     grid: 1 fr;
     list-style-type: none;
-    background-color: aquamarine;
-    border: 1px solid rgb(27, 27, 27);
+    background-color: white;
+    border: 1px solid rgb(145, 145, 145);
     padding: 0;
     margin: 0;
-    position: re;
+    overflow: scroll;
+    overflow-x: hidden;
     top: 20px;
     grid-area: sugestedList;
+    max-height: 300px;
+    display: none;
 }
 #checkbox {
     grid-area: checkbox
@@ -64,6 +67,6 @@ li {
 }
 
 .name:hover {
-    background-color: blue;
+    background-color: rgb(144, 182, 109);
 }
 /*temporary styles end*/

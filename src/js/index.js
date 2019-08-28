@@ -6,7 +6,7 @@ const defaultCity = 'wroclaw';
 // Create div for test results
 const formDiv = document.createElement('div');
 formDiv.classList = 'info-div';
-document.querySelector('.container').insertBefore(formDiv, document.querySelector('.wheater'));
+document.querySelector('.container').insertBefore(formDiv, document.querySelector('.weather'));
 
 const form = document.createElement('form');
 formDiv.appendChild(form);
@@ -18,17 +18,16 @@ submitBtn.setAttribute('type', 'submit');
 form.appendChild(submitBtn);
 
 const defaultLocation = new APIrequest(defaultCity, "weather");
+const defaultForecastLocation = new APIrequest(defaultCity, "forecast");
 defaultLocation.displayData();
+defaultForecastLocation.displayData();
 
 form.addEventListener('submit', event => {
     event.preventDefault();
     const cityName = inputTxt.value;
     const weather = new APIrequest(cityName, 'weather');
-    // const data = weather.makeRequest().then(weather.displayData());
-    // const data = weather.displayData();
-    // console.log("data", data);
-    // const result = data.then(console.log('jest'));
-    // console.log("result", result[0]);
+    const forecastLocation = new APIrequest(cityName, 'forecast');
     weather.displayData();
-    // weather.makeRequest();
+    forecastLocation.displayData();
+    // console.log(forecastLocation.displayData())
 });

@@ -1,7 +1,7 @@
 var latinize = require('latinize');
 import {
     returnCityId
-} from './index.js';
+} from './citiesSearch.js';
 
 export default class CitiesFinder {
     constructor(phrase) {
@@ -28,6 +28,7 @@ export default class CitiesFinder {
                 this.filtered = el;
                 const html = this.filtered.map(place => {
                     let placeName = place.name;
+                    suggestedList.style.display = "block";
                     return `
                     <li>
                         <span class="name" id="${place.id}">${placeName}</span>

@@ -1,27 +1,56 @@
+html {
+    font-size: 20px;
+}
 body {
     background-color: rgb(145, 145, 145);
+    margin: 0;
 }
 /*temporary styles start*/
 header {
     background-image: url("../img/XD.jpg");
+    width: auto;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+.searching-box {
+    background-color: white;
+    width: 30%;
+    position: relative;
+    display: block;
+    top: 40%;
+    margin: 0 auto;
+}
+.searching-box .logo {
+    background-color: aqua;
+    height: 100px;
 }
 .searching-field {
-    display: block;
-    width: auto;
     max-width: 30vw;
-    position: relative;
-    align-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+.searching-text h2{
+    font-size: 50px;
+    margin: 0;
+    text-align: center;
+    color: black;
+    top: 50%;
+    display: block;
 }
 .search-form {
-    width: auto;
-    max-width: 30vw;
+    background-color: blueviolet;
+    
+    width: ;
     display: grid;
     padding: 0;
-    grid-template-areas: "search-bar search-bar search-bar search-bar"
-                         "sugestedList sugestedList sugestedList sugestedList"
-                         "checkbox find-me search .";
-    grid-template-columns: repeat(1fr, 4);
-    grid-template-rows: 35px 1fr 30px;
+    grid-template-areas: ". . . . . ."
+                         ". search-bar search-bar search-bar search-bar ."
+                         ". sugestedList sugestedList sugestedList sugestedList ."
+                         ". checkbox find-me search . ."
+                         ". . . . . .";
+    grid-template-columns:  repeat(1fr, 4) 5px;
+    grid-template-rows: 15px 35px 1fr 30px 15px;
 }
 .search-form button {
     max-width: 10vw;

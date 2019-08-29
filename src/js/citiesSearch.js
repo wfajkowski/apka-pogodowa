@@ -25,6 +25,7 @@ export function returnCityId(id, lat, lon) {
 
 function passCityId() {
     console.log(val, latitude, longitude);
+<<<<<<< HEAD
 }
 
 function loseFocus() {
@@ -34,6 +35,8 @@ function loseFocus() {
         let target = event.target;
         (target.tagName != 'UL') ? true:selectedPlace.style.display = "none";
     }    
+=======
+>>>>>>> master
 }
 
 input.addEventListener('keyup', display);

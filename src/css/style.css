@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Handlee&display=swap');
+
 html {
     font-size: 20px;
     font-family: 'Handlee', cursive;
 }
+
 body {
     background-color: rgb(145, 145, 145);
     margin: 0;
 }
+
 /*temporary styles start*/
 header {
     background-image: url("../img/XD.jpg");
@@ -15,6 +18,7 @@ header {
     background-position: center;
     background-size: cover;
 }
+
 .searching-box {
     background-color: rgba(0, 0, 0, 0.575);
     border: 3px solid black;
@@ -27,6 +31,7 @@ header {
     min-width: 290px;
     padding: 20px;
 }
+
 .searching-logo {
     background-image: url("../img/sunny-icon.png");
     background-size: contain;
@@ -34,11 +39,13 @@ header {
     background-position: center;
     height: 200px;
 }
+
 .searching-field {
     max-width: 30vw;
     text-align: center;
 }
-.searching-text h2{
+
+.searching-text h2 {
     font-size: 50px;
     margin: 0;
     text-align: center;
@@ -46,6 +53,7 @@ header {
     top: 50%;
     display: block;
 }
+
 .searching-text h5 {
     font-size: 15px;
     margin: 0;
@@ -54,20 +62,22 @@ header {
     top: 50%;
     display: block;
 }
+
 .search-form {
     position: relative;
     min-width: 290px;
     display: grid;
     padding: 0;
     grid-template-areas: ". . . . . ."
-                         ". search-bar search-bar search-bar search-bar ."
-                         ". sugestedList sugestedList sugestedList sugestedList ."
-                         ". . find-me search . ."
-                         ". . . . . .";
-    grid-template-columns:  repeat(1fr, 6);
+        ". search-bar search-bar search-bar search-bar ."
+        ". sugestedList sugestedList sugestedList sugestedList ."
+        ". . find-me search . ."
+        ". . . . . .";
+    grid-template-columns: repeat(1fr, 6);
     grid-template-rows: 15px 35px 1fr 50px 5px;
     grid-row-gap: 5px;
 }
+
 .search-form button {
     max-width: 10vw;
     display: inline-block;
@@ -77,38 +87,43 @@ header {
 
 .sugestedList {
     list-style-type: none;
-    background-color: aquamarine;
+    background-color: white;
     border: 1px solid rgb(27, 27, 27);
     padding: 0;
-    margin: 0;
+    margin: -10px 3px 0px 3px;
+    overflow: scroll;
+    overflow-x: hidden;
     grid-area: sugestedList;
-    position: absolute;
     max-height: 300px;
-    overflow: hidden;
-    
+    min-width: 250px;
+    display: none;
+    z-index: 1;
 }
 
 #find-me {
-    grid-area: find-me
+    grid-area: find-me;
 }
+
 #search-bar {
-    min-width: 250px;
     height: 15px;
     width: 90%;
     max-width: 350px;
     position: relative;
 }
+
 .input-field {
     grid-area: search-bar;
     height: 100px;
 }
+
 #search {
     grid-area: search
 }
+
 li {
     box-sizing: border-box;
     width: 100%;
-    position:relative;
+    position: relative;
     border: rgba(71, 71, 71, 0.384) 1px solid;
 }
 
@@ -121,6 +136,7 @@ li {
 .name:hover {
     background-color: blue;
 }
+
 /* navbar */
 nav {
     background-color: rgba(0, 0, 0, 0.719);
@@ -129,6 +145,7 @@ nav {
     height: 60px;
     position: fixed;
 }
+
 nav h3 {
     color: #fff;
     font-size: 40px;
@@ -136,6 +153,7 @@ nav h3 {
     float: right;
     right: 15px;
 }
+
 nav img {
     height: 50px;
     margin: 5px 0 5px 20px;
@@ -155,6 +173,7 @@ nav img {
     height: 0;
     width: 0;
 }
+
 .checkmark {
     position: absolute;
     top: 30px;
@@ -165,20 +184,25 @@ nav img {
     border: rgb(99, 99, 99) solid 1px;
     border-radius: 50%;
 }
-.container-checkbox:hover input ~ .checkmark {
+
+.container-checkbox:hover input~.checkmark {
     background-color: #ccc;
 }
-.container-checkbox input:checked ~ .checkmark {
+
+.container-checkbox input:checked~.checkmark {
     background-color: #2196F3;
-  }
-  .checkmark:after {
+}
+
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  .container-checkbox input:checked ~ .checkmark:after {
+}
+
+.container-checkbox input:checked~.checkmark:after {
     display: block;
-  }
+}
+
 .container-checkbox .checkmark:after {
     right: 8px;
     top: 5px;
@@ -189,7 +213,8 @@ nav img {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
+}
+
 /* button and input */
 button {
     display: inline-block;
@@ -201,8 +226,8 @@ button {
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
-    transition: background 250ms ease-in-out, 
-                transform 150ms ease;
+    transition: background 250ms ease-in-out,
+        transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
@@ -220,24 +245,26 @@ button:focus {
 button:active {
     transform: scale(0.99);
 }
-#search-bar { 
-    border: 1px solid white; 
-    -webkit-box-shadow: 
-      inset 0 0 8px  rgba(0, 0, 0, 0.1),
-        0 0 16px rgba(0, 0, 0, 0.1); 
-    -moz-box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-        0 0 16px rgba(0,0,0,0.1); 
-    box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-        0 0 16px rgba(0,0,0,0.1); 
+
+#search-bar {
+    border: 1px solid white;
+    -webkit-box-shadow:
+        inset 0 0 8px rgba(0, 0, 0, 0.1),
+        0 0 16px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow:
+        inset 0 0 8px rgba(0, 0, 0, 0.1),
+        0 0 16px rgba(0, 0, 0, 0.1);
+    box-shadow:
+        inset 0 0 8px rgba(0, 0, 0, 0.1),
+        0 0 16px rgba(0, 0, 0, 0.1);
     padding: 15px;
     background: rgba(255, 255, 255, 0);
     margin: 0 0 10px 0;
     color: #fff;
     font-size: 18px;
 }
-#search-bar:focus { 
-    border: 1px solid white; 
+
+#search-bar:focus {
+    border: 1px solid white;
     background: rgba(255, 255, 255, 0.144);
 }

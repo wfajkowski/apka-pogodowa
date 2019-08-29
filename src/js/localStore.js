@@ -8,7 +8,7 @@ var defaultValue = {
 
 export function load_(){
   var load = JSON.parse(localStorage.getItem("defaultCity"));
-  defaultValue.city = load.city
+  defaultValue.city = load.city;
 }
 
 export function save_(e){

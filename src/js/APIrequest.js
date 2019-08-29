@@ -1,5 +1,5 @@
 const moment = require('moment');
-export default class APIrequest {
+export class APIrequest {
     // API request constructor
     constructor(city, typeOfRequest){
         const defaultCity = 'wroclaw';
@@ -84,6 +84,13 @@ export default class APIrequest {
 }
 
 
+export const init = () =>{
 
-// const weather = new APIrequest('Warszawa', 'weather');
-// weather.makeRequest();
+  const defaultCity = 'wroclaw';
+  
+  // Create div for test results
+  const defaultLocation = new APIrequest(defaultCity, "weather");
+  const defaultForecastLocation = new APIrequest(defaultCity, "forecast");
+  defaultLocation.displayData();
+  defaultForecastLocation.displayData();
+}

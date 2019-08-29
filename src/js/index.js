@@ -14,5 +14,4 @@ document.querySelector('#find-me').addEventListener('click', geoFindMe);
 search.addEventListener('click', save_)
 window.onload = load_()
 
-
 search.addEventListener('click', showMeWeather);

@@ -83,7 +83,10 @@ export class APIrequest {
 
 // Setting default city and fetch data for it
 export const init = () => {
-  const defaultCity = localStorage.getItem("defaultCity").toLowerCase().replace(/"/g, "") || 'wroclaw';
+  let defaultCity = 'wroclaw';
+  if (localStorage.getItem("defaultCity")){
+    defaultCity = localStorage.getItem("defaultCity").toLowerCase().replace(/"/g, "");
+  }
   
   const defaultLocation = new APIrequest(defaultCity, "weather");
   const defaultForecastLocation = new APIrequest(defaultCity, "forecast");

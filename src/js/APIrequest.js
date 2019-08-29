@@ -34,8 +34,6 @@ export class APIrequest {
             return result;
     }
     displayData(){
-        // Test
-       
         const weatherDiv = document.querySelector(".weather");
         const icon = document.querySelector(".icon img");
         const weatherInfo = document.querySelector(".actual-weather-info");
@@ -83,11 +81,9 @@ export class APIrequest {
     }
 }
 
+// Setting default city and fetch data for it
 export const init = () => {
-  console.log('local', localStorage.getItem("defaultCity"))
-  const defaultCity = 'wroclaw';
-  // const defaultCity = defaultCitylocalStorage.getItem("defaultCity")
-  //  || 'wroclaw';
+  const defaultCity = localStorage.getItem("defaultCity").toLowerCase().replace(/"/g, "") || 'wroclaw';
   
   const defaultLocation = new APIrequest(defaultCity, "weather");
   const defaultForecastLocation = new APIrequest(defaultCity, "forecast");

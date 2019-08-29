@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,39 +10,97 @@
 </head>
 
 <body>
-    Hello World!
-    <br>
-    Dzisiaj we Wrocławiu 13℃ :)
-    <form class="search-form">
-        <input type="text" class="input" placeholder="Miejscowość">
-        <ul class="sugestedList">
-        </ul>
-    </form>
+    <nav class=nav-bar>  <!-- czarny pasek u góry -->
+        <a href=#main-pog><img src="../src/img/logo.png"></a>
+        <h3>Aplikacja pogodowa</h3>
+    </nav>
+    <header class=main-page id=main-page> <!-- to będzie "strona startowa" z wyszukiwarką --> 
+        <div class="searching-box">
+            <div class="searching-logo">
+            </div>
+            <div class="searching-text">
+                <h2>Welcome</h2>
+            </div>
+            <div class="searching-field">           <!--  -->
+                <div class="search-form">
+                    <input type="text" class="input" placeholder="Miejscowość" id="search-bar">
+                    <ul class="sugestedList">
+                    </ul>
+                    <input id="checkbox" type="checkbox">
+                    <button type="submit" id="find-me">Find me</button>
+                    <button type="submit" id="search">Search</button>
+                </div>
+            </div> 
+       </div>
+        </header>
+        <main> <!-- główna część zawierająca tabelki z pogodą -->
+            <div class="container">
+                <h2>Weather for: Wrocław, Poland</h2>
+                <div class="weather">
+                    <div class="actual-weather">
+                        <div class="icon">
+                            <div class="temp"></div>
+                            <img src="" alt="weather icon">
+                        </div>
+                        <div class="actual-weather-info"></div>
+                        <div class="weather-image"></div>
+                    </div>
+                    <div class="today-weather-hourly">
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                        </div>
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                        </div>
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                        </div>
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                        </div>
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                        </div>
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                        </div>
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                        </div>
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                        </div>
+                    </div>
+                    <div class="weather-forecast">
+            
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 <script type="text/javascript" src="bundle.js"></script></body>
-
-=======
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>apka pogodowa</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        Hello World!
-        <br>
-        Dzisiaj we Wrocławiu 13℃ :)
-        <!-- Simple template -->
-         <div class="container">
-             <div class="wheater">
-                 <div class="icon">
-                     <img src="" alt="">
-                 </div>
-                 <div class="wheater-info"></div>
-                 <div class="temp"></div>
-             </div>
-         </div>
-    <script type="text/javascript" src="bundle.js"></script></body>
->>>>>>> rkamka
 </html>

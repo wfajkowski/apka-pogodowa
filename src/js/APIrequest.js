@@ -83,14 +83,25 @@ export class APIrequest {
     }
 }
 
-
-export const init = () =>{
-
+export const init = () => {
+  console.log('local', localStorage.getItem("defaultCity"))
   const defaultCity = 'wroclaw';
+  // const defaultCity = defaultCitylocalStorage.getItem("defaultCity")
+  //  || 'wroclaw';
   
-  // Create div for test results
   const defaultLocation = new APIrequest(defaultCity, "weather");
   const defaultForecastLocation = new APIrequest(defaultCity, "forecast");
   defaultLocation.displayData();
   defaultForecastLocation.displayData();
+}
+
+export const showMeWeather = () => {
+  const searchBar = document.querySelector('#search-bar');
+  const cityName = searchBar.value;
+  console.log(searchBar.value);
+  const weather = new APIrequest(cityName, 'weather');
+  const forecastLocation = new APIrequest(cityName, 'forecast');
+  weather.displayData();
+  forecastLocation.displayData();
+  // console.log(forecastLocation.displayData())
 }

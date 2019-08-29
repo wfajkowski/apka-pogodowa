@@ -7,7 +7,12 @@ var defaultValue = {
 }
 
 export function load_(){
+  // Added this 'if statement' because all further instructions were stopped
+  if(!localStorage.getItem("defaultCity")){
+    return
+  }
   var load = JSON.parse(localStorage.getItem("defaultCity"));
+  
   defaultValue.city = load.city;
 }
 

@@ -10,7 +10,7 @@ function display() {
     finder.getCities(this.value);
 }
 
-function getCityId() {
+function setCityId() {
     finder.getCityId(selectedPlace);
 }
 
@@ -23,7 +23,18 @@ function passCityId() {
     console.log(val);
 }
 
+function loseFocus() {
+    console.log("Lost");
+
+    event => {
+        let target = event.target;
+        (target.tagName != 'UL') ? true:selectedPlace.style.display = "none";
+    }    
+}
+
 input.addEventListener('keyup', display);
-input.addEventListener('change', display);
-selectedPlace.addEventListener('click', getCityId);
+// input.addEventListener('blur', loseFocus);
+selectedPlace.addEventListener('click', setCityId, {
+    capture: true
+});
 searchButton.addEventListener('click', passCityId);

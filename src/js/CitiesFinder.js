@@ -44,7 +44,8 @@ export default class CitiesFinder {
         const input = document.querySelector('.input');
         list.onclick = function (event) {
             let target = event.target;
-            if (target.tagName != 'SPAN') return;
+            console.log(target.className==='name');
+            if (target.className != 'name') return;
             returnedId = target.id;
             returnCityId(returnedId);
             list.style.display = "none";

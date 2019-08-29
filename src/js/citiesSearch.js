@@ -5,6 +5,8 @@ const input = document.querySelector('.input');
 const selectedPlace = document.querySelector('.sugestedList');
 const searchButton = document.getElementById('search');
 var val;
+var latitude;
+var longitude;
 
 function display() {
     finder.getCities(this.value);
@@ -14,13 +16,15 @@ function setCityId() {
     finder.getCityId(selectedPlace);
 }
 
-export function returnCityId(id) {
-    console.log(id);
+export function returnCityId(id, lat, lon) {
+    console.log(id, lat, lon);
     val = id;
+    latitude = lat;
+    longitude = lon;
 }
 
 function passCityId() {
-    console.log(val);
+    console.log(val, latitude, longitude);
 }
 
 function loseFocus() {
@@ -33,7 +37,6 @@ function loseFocus() {
 }
 
 input.addEventListener('keyup', display);
-// input.addEventListener('blur', loseFocus);
 selectedPlace.addEventListener('click', setCityId, {
     capture: true
 });

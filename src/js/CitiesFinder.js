@@ -31,7 +31,7 @@ export default class CitiesFinder {
                     suggestedList.style.display = "block";
                     return `
                     <li>
-                        <span class="name" id="${place.id}">${placeName}</span>
+                        <span class="name" id="${place.id}" data-lat="${place.coord.lat}" data-lon="${place.coord.lon}">${placeName}</span>
                     </li>
                     `;
                 }).join('');
@@ -41,13 +41,16 @@ export default class CitiesFinder {
 
     getCityId(list) {
         let returnedId;
+        let lat;
+        let lon;
         const input = document.querySelector('.input');
         list.onclick = function (event) {
             let target = event.target;
-            console.log(target.className==='name');
             if (target.className != 'name') return;
             returnedId = target.id;
-            returnCityId(returnedId);
+            lat = target.dataset.lat;
+            lon = target.dataset.lon;
+            returnCityId(returnedId, lat, lon);
             list.style.display = "none";
             input.value = target.innerHTML;
         };

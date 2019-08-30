@@ -16,7 +16,7 @@
         <a href=#main-pog><img src="../src/img/sunny-icon.png"></a>
         <h3>Sunny Site</h3>
     </nav>
-    <header class=main-page id=main-page>
+    <header class="main-page" id="main-page">
         <!-- to będzie "strona startowa" z wyszukiwarką -->
         <div class="searching-box">
             <div class="searching-logo">
@@ -35,7 +35,9 @@
                     </div>
                     <label class="container-checkbox">
                         <input type="checkbox" id="checkbox">
-                        <div class="checkmark"></div>
+                        <div class="checkmark tooltip">
+                            <span class="tooltiptext">Set default</span>
+                        </div>
                     </label>
                     <button type="submit" id="find-me">Find me</button>
                     <button type="submit" id="search">Search</button>
@@ -46,8 +48,11 @@
     <main>
         <!-- główna część zawierająca tabelki z pogodą -->
         <div class="container">
+            <div class="weatherfor">
             <h2>Weather for: Wrocław, Poland</h2>
+            </div>
             <div class="weather">
+
                 <div class="actual-weather">
                     <div class="icon">
                         <div class="temp"></div>
@@ -56,6 +61,7 @@
                     <div class="actual-weather-info"></div>
                     <div class="weather-image"></div>
                 </div>
+
                 <div class="today-weather-hourly">
                     <div class="item">
                         <div class="icon-hourly">
@@ -106,6 +112,7 @@
                         <div class="temp-hourly"></div>
                     </div>
                 </div>
+
                 <div class="weather-forecast">
 
                 </div>

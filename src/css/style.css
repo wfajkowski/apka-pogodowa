@@ -12,15 +12,17 @@ body {
 
 /*temporary styles start*/
 header {
-    background-image: url("../img/XD.jpg");
+    
     width: auto;
     height: 100vh;
     background-position: center;
     background-size: cover;
+    background-image: url('http://placehold.it/300&text=banner1');
+    background-repeat: no-repeat;  
 }
 
 .searching-box {
-    background-color: rgba(0, 0, 0, 0.575);
+    background-color: rgba(0, 0, 0, 0.445);
     border: 3px solid black;
 
     width: 30%;
@@ -28,8 +30,9 @@ header {
     display: block;
     top: 25vh;
     margin: 0 auto;
-    min-width: 290px;
-    padding: 20px;
+    min-width: 340px;
+    padding: 20px 1%;
+    box-shadow: 0px 0px 20px black;
 }
 
 .searching-logo {
@@ -106,8 +109,8 @@ header {
 
 #search-bar {
     height: 15px;
-    width: 90%;
-    max-width: 350px;
+    width: 93%;
+    min-width: 285px;
     position: relative;
 }
 
@@ -165,7 +168,7 @@ nav img {
 /*  custom checkbox */
 .container-checkbox input {
     margin: 0;
-    position: absolute;
+    position: relative;
     top: 27px;
     right: 10%;
     cursor: pointer;

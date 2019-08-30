@@ -14,5 +14,5 @@ init();
 document.querySelector('#find-me').addEventListener('click', geoFindMe);
 search.addEventListener('click', save_);
 window.onload = load_();
-setInterval(imageChange(), 1000);
+window.setInterval(imageChange(), 10);
 search.addEventListener('click', showMeWeather);

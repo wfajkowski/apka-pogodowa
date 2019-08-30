@@ -113,6 +113,9 @@ header {
     min-width: 285px;
     position: relative;
 }
+#search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.575);
+}
 
 .input-field {
     grid-area: search-bar;
@@ -128,6 +131,7 @@ li {
     width: 100%;
     position: relative;
     border: rgba(71, 71, 71, 0.384) 1px solid;
+    z-index: 1;
 }
 
 .name {
@@ -137,7 +141,7 @@ li {
 }
 
 .name:hover {
-    background-color: rgba(0, 0, 255, 0.329);
+    background-color: rgba(0, 174, 255, 0.329);
 }
 
 /* navbar */
@@ -276,7 +280,7 @@ button:active {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 100px;
-    bottom: 13px;
+    bottom: 15px;
     background-color: rgba(0, 0, 0, 0.575);
     color: #fff;
     text-align: center;

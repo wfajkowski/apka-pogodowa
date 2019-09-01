@@ -8,11 +8,11 @@ import { imageChange } from './imageChange.js';
 
 
 const search = document.getElementById('search')
-init();
+init('metric');
 
 
 document.querySelector('#find-me').addEventListener('click', geoFindMe);
 search.addEventListener('click', save_);
 window.onload = load_();
 window.setInterval(imageChange(), 10);
-search.addEventListener('click', showMeWeather);
+search.addEventListener('click', showMeWeather.bind(this, 'metric'));

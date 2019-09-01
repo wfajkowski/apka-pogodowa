@@ -49,73 +49,148 @@
         <!-- główna część zawierająca tabelki z pogodą -->
         <div class="container">
             <div class="weatherfor">
-            <h2>Weather for: Wrocław, Poland</h2>
+            <h2>Weather for: <span class="current-city"></span>, Poland</h2>
             </div>
             <div class="weather">
-
-                <div class="actual-weather">
-                    <div class="icon">
-                        <div class="temp"></div>
-                        <img src="" alt="weather icon">
+                <h3>Current weather</h3>
+                <section class="current-weather">
+                    <div class="today-weather">
+                        <p class="time"></p>
+                        <div class="main-info">
+                            <div class="flex-container">
+                                <img src="" alt="weather icon">
+                                <div class="temp"></div>
+                            </div>
+                            <div class="weather-text"></div>
+                            <p class="sunrise">Sunrise: <span></span></p>
+                            <p class="sunset">Sunset: <span></span></p>
+                        </div>
                     </div>
-                    <div class="actual-weather-info"></div>
+                    <div class="current-weather-info"></div>
                     <div class="weather-image"></div>
-                </div>
-
-                <div class="today-weather-hourly">
-                    <div class="item">
-                        <div class="icon-hourly">
-                            <img src="" alt="">
-                        </div>
-                        <div class="temp-hourly"></div>
+                </section>
+                <h3>Hourly forecast</h3>
+                <section class="today-weather-hourly">
+                    <div class="buttons">
+                        <div class="btn active" data-type="temp">Temperature</div>
+                        <div class="btn" data-type="pressure">Pressure</div>
+                        <div class="btn" data-type="wind">Wind</div>
                     </div>
-                    <div class="item">
-                        <div class="icon-hourly">
-                            <img src="" alt="">
+                    <div class="hourly-data">
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                            <div class="forecast-text"></div>
+                            <div class="forecast-hour"></div>
                         </div>
-                        <div class="temp-hourly"></div>
-                    </div>
-                    <div class="item">
-                        <div class="icon-hourly">
-                            <img src="" alt="">
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                            <div class="forecast-text"></div>
+                            <div class="forecast-hour"></div>
                         </div>
-                        <div class="temp-hourly"></div>
-                    </div>
-                    <div class="item">
-                        <div class="icon-hourly">
-                            <img src="" alt="">
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                            <div class="forecast-text"></div>
+                            <div class="forecast-hour"></div>
                         </div>
-                        <div class="temp-hourly"></div>
-                    </div>
-                    <div class="item">
-                        <div class="icon-hourly">
-                            <img src="" alt="">
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                            <div class="forecast-text"></div>
+                            <div class="forecast-hour"></div>
                         </div>
-                        <div class="temp-hourly"></div>
-                    </div>
-                    <div class="item">
-                        <div class="icon-hourly">
-                            <img src="" alt="">
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                            <div class="forecast-text"></div>
+                            <div class="forecast-hour"></div>
                         </div>
-                        <div class="temp-hourly"></div>
-                    </div>
-                    <div class="item">
-                        <div class="icon-hourly">
-                            <img src="" alt="">
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                            <div class="forecast-text"></div>
+                            <div class="forecast-hour"></div>
                         </div>
-                        <div class="temp-hourly"></div>
-                    </div>
-                    <div class="item">
-                        <div class="icon-hourly">
-                            <img src="" alt="">
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                            <div class="forecast-text"></div>
+                            <div class="forecast-hour"></div>
                         </div>
-                        <div class="temp-hourly"></div>
+                        <div class="item">
+                            <div class="icon-hourly">
+                                <img src="" alt="">
+                            </div>
+                            <div class="temp-hourly"></div>
+                            <div class="forecast-text"></div>
+                            <div class="forecast-hour"></div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="weather-forecast">
-
-                </div>
+                    </section>
+                <h3>Forecast for the next few days</h3>
+                <section class="weather-forecast">
+                    <div class="forecast-item">
+                        <p class="date"></p>
+                        <img src="" alt="">
+                        <div class="day-night-temp">
+                            <p class="day-temp"></p>
+                            <p class="night-temp"></p>
+                        </div>
+                        <div class="text-info"></div>
+                    </div>
+                    <div class="forecast-item">
+                        <p class="date"></p>
+                        <img src="" alt="">
+                        <div class="day-night-temp">
+                            <p class="day-temp"></p>
+                            <p class="night-temp"></p>
+                        </div>
+                        <div class="text-info"></div>
+                    </div>
+                    <div class="forecast-item">
+                        <p class="date"></p>
+                        <img src="" alt="">
+                        <div class="day-night-temp">
+                            <p class="day-temp"></p>
+                            <p class="night-temp"></p>
+                        </div>
+                        <div class="text-info"></div>
+                    </div>
+                    <div class="forecast-item">
+                        <p class="date"></p>
+                        <img src="" alt="">
+                        <div class="day-night-temp">
+                            <p class="day-temp"></p>
+                            <p class="night-temp"></p>
+                        </div>
+                        <div class="text-info"></div>
+                    </div>
+                    <div class="forecast-item">
+                        <p class="date"></p>
+                        <img src="" alt="">
+                        <div class="day-night-temp">
+                            <p class="day-temp"></p>
+                            <p class="night-temp"></p>
+                        </div>
+                        <div class="text-info"></div>
+                    </div>
+                </section>
             </div>
         </div>
     </main>

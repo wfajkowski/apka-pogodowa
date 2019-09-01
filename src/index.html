@@ -30,15 +30,15 @@
                 <!--  -->
                 <div class="search-form">
                     <div class="input-field">
-                        <input type="text" class="input" placeholder="Miejscowość" id="search-bar">
+                        <input type="text" class="input" placeholder="Miejscowość" id="search-bar" autocomplete="off">
+                        <ul class="sugestedList">
+                        </ul>
                         <label class="container-checkbox">
                                 <input type="checkbox" id="checkbox">
                                 <div class="checkmark tooltip">
                                     <span class="tooltiptext">Set default</span>
                                 </div>
                             </label>
-                        <ul class="sugestedList">
-                        </ul>
                     </div>
     
                     <button type="submit" id="find-me">Find me</button>
@@ -152,49 +152,59 @@
                 <h3>Forecast for the next few days</h3>
                 <section class="weather-forecast">
                     <div class="forecast-item">
+                            <div class="forecast-field">
                         <p class="date"></p>
-                        <img src="" alt="">
+                        <img src="" alt="" id="main-icon">
+                        <div class="day-night-temp">
+                            <p class="day-temp"></p>
+                            <p class="night-temp"></p>
+                        </div>
+                        <div class="text-info"></div>
+                        </div>
+                    </div>
+                    <div class="forecast-item">
+                            <div class="forecast-field">
+                        <p class="date"></p>
+                        <img src="" alt="" id="main-icon">
                         <div class="day-night-temp">
                             <p class="day-temp"></p>
                             <p class="night-temp"></p>
                         </div>
                         <div class="text-info"></div>
                     </div>
+                    </div>
                     <div class="forecast-item">
+                            <div class="forecast-field">
                         <p class="date"></p>
-                        <img src="" alt="">
+                        <img src="" alt="" id="main-icon">
                         <div class="day-night-temp">
                             <p class="day-temp"></p>
                             <p class="night-temp"></p>
                         </div>
                         <div class="text-info"></div>
                     </div>
+                    </div>
                     <div class="forecast-item">
+                        <div class="forecast-field">
                         <p class="date"></p>
-                        <img src="" alt="">
+                        <img src="" alt="" id="main-icon">
                         <div class="day-night-temp">
                             <p class="day-temp"></p>
                             <p class="night-temp"></p>
                         </div>
                         <div class="text-info"></div>
                     </div>
+                    </div>
                     <div class="forecast-item">
+                            <div class="forecast-field">
                         <p class="date"></p>
-                        <img src="" alt="">
+                        <img src="" alt="" id="main-icon">
                         <div class="day-night-temp">
                             <p class="day-temp"></p>
                             <p class="night-temp"></p>
                         </div>
                         <div class="text-info"></div>
                     </div>
-                    <div class="forecast-item">
-                        <p class="date"></p>
-                        <img src="" alt="">
-                        <div class="day-night-temp">
-                            <p class="day-temp"></p>
-                            <p class="night-temp"></p>
-                        </div>
-                        <div class="text-info"></div>
                     </div>
                 </section>
             </div>

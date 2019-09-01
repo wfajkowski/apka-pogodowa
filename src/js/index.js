@@ -15,5 +15,5 @@ init('metric');
 document.querySelector('#find-me').addEventListener('click', geoFindMe);
 search.addEventListener('click', save_);
 window.onload = load_();
-window.setInterval(imageChange(), 10);
+window.onload = imageChange();
 search.addEventListener('click', showMeWeather.bind(this, 'metric'));

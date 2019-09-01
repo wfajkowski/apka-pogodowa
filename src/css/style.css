@@ -97,16 +97,15 @@ header {
 .sugestedList {
     list-style-type: none;
     background-color: white;
-    border: 1px solid rgb(27, 27, 27);
+    border: 1px solid white;
     padding: 0;
-    margin: -10px 3px 0px 3px;
+    margin: -10px -4px 0px 0px;
     overflow: scroll;
     overflow-x: hidden;
     grid-area: sugestedList;
     max-height: 300px;
     min-width: 250px;
-    display: none;
-    z-index: 1;
+    visibility: hidden;
 }
 
 #find-me {
@@ -118,6 +117,7 @@ header {
     width: 93%;
     min-width: 285px;    
 }
+
 #search-bar::placeholder {
     color: rgba(250, 250, 250, 0.705);
 }
@@ -136,7 +136,7 @@ li {
     width: 100%;
     position: relative;
     border: rgba(71, 71, 71, 0.384) 1px solid;
-    z-index: 1;
+    background-color: white;
 }
 
 .name {
@@ -145,8 +145,8 @@ li {
     margin: 0;
 }
 
-.name:hover {
-    background-color: rgba(0, 174, 255, 0.329);
+.name:hover, .name:active {
+    background-color: #2196f3;
 }
 
 /* navbar */
@@ -279,6 +279,7 @@ button:focus{
     font-size: 18px;
     border: 2px solid rgba(255, 255, 255, 0.158);
     font-family: 'Nunito', sans-serif;
+    position: relative;
 }
 
 #search-bar:focus {
@@ -303,12 +304,16 @@ button:focus{
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
-  }
-  
-  .tooltip:hover .tooltiptext {
+}
+
+.tooltip:hover .tooltiptext {
     visibility: visible;
   }
-#main-icon {
+#main-icon{
+    width: 65px;
+    height: 65px;
+}
+.forecast-item > img{
     width: 65px;
     height: 65px;
 }
@@ -321,13 +326,14 @@ button:focus{
 
 
 
-  /* body */
+/* body */
 .weatherfor {
     text-align: center;
     width: auto;
     margin: auto;
     display: inline-block;
 }
+
 .weatherfor h2 {
     border-bottom: 5px dotted white;
     font-size: 40px;
@@ -337,6 +343,7 @@ button:focus{
 .weather h3{
     margin-top: 0;
 }
+
 .actual-weather,
 .today-weather-hourly,
 .weather-forecast {
@@ -350,7 +357,7 @@ button:focus{
     grid-template-columns: 10% repeat(3, 1fr) 10%;
     text-align: center;
     grid-template-areas: '. weather-header weather-header weather-header .'
-    '. weather-data weather-data weather-data .'
+        '. weather-data weather-data weather-data .'
 }
 .container img {
     width: 40px;
@@ -417,7 +424,8 @@ button:focus{
     font-size: 2.4rem;
 }
 
-.icon-img, .temp {
+.icon-img,
+.temp {
     display: inline-block;
 }
 
@@ -485,10 +493,22 @@ p.night-temp {
     font-weight: 500;
 }
 .forecast-item {
-    margin: 10px;
-    border: 1px solid red;
-    width: 20%;
+    border: 1px solid rgba(0, 0, 0, 0.596);
+    background-color: #2196f3;
+    width: 100%;
     min-width: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: 0 90%;
+    margin: 10px 0;
+}
+.forecast-field {
+    width: 20%;
+    height: 100%;
+    padding: 20px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.507);
 }
 .graph {
     width: 100%;

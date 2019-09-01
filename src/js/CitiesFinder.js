@@ -2,6 +2,7 @@ var latinize = require('latinize');
 import {
     returnCityId
 } from './citiesSearch.js';
+const jsonData = import('../../res/citiesPL.json');
 
 export default class CitiesFinder {
     constructor(phrase) {
@@ -10,9 +11,10 @@ export default class CitiesFinder {
     }
 
     getCities(phrase) {
-        fetch('../../res/citiesPL.json')
-            .then(res => res.json())
-            .then(data => {
+        jsonData
+            .then(({
+                default: data
+            }) => {
                 this.cities = [];
                 this.cities.push(...data);
                 return this.cities;
@@ -28,7 +30,7 @@ export default class CitiesFinder {
                 this.filtered = el;
                 const html = this.filtered.map(place => {
                     let placeName = place.name;
-                    suggestedList.style.display = "block";
+                    suggestedList.style.visibility = "visible";
                     return `
                     <li>
                         <span class="name" id="${place.id}" data-lat="${place.coord.lat}" data-lon="${place.coord.lon}">${placeName}</span>
@@ -51,7 +53,7 @@ export default class CitiesFinder {
             lat = target.dataset.lat;
             lon = target.dataset.lon;
             returnCityId(returnedId, lat, lon);
-            list.style.display = "none";
+            list.style.visibility = "hidden";
             input.value = target.innerHTML;
         };
     }

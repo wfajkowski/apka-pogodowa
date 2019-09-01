@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
+    <script src="https://d3js.org/d3.v4.js"></script>
 </head>
 
 <body>
@@ -30,15 +31,16 @@
                 <div class="search-form">
                     <div class="input-field">
                         <input type="text" class="input" placeholder="Miejscowość" id="search-bar">
+                        <label class="container-checkbox">
+                                <input type="checkbox" id="checkbox">
+                                <div class="checkmark tooltip">
+                                    <span class="tooltiptext">Set default</span>
+                                </div>
+                            </label>
                         <ul class="sugestedList">
                         </ul>
                     </div>
-                    <label class="container-checkbox">
-                        <input type="checkbox" id="checkbox">
-                        <div class="checkmark tooltip">
-                            <span class="tooltiptext">Set default</span>
-                        </div>
-                    </label>
+    
                     <button type="submit" id="find-me">Find me</button>
                     <button type="submit" id="search">Search</button>
                 </div>
@@ -57,11 +59,12 @@
                     <div class="today-weather">
                         <p class="time"></p>
                         <div class="main-info">
+                                <img src="" alt="weather icon" id="main-icon">
+                                <div class="weather-text"></div>
                             <div class="flex-container">
-                                <img src="" alt="weather icon">
+                                
                                 <div class="temp"></div>
                             </div>
-                            <div class="weather-text"></div>
                             <p class="sunrise">Sunrise: <span></span></p>
                             <p class="sunset">Sunset: <span></span></p>
                         </div>
@@ -76,6 +79,9 @@
                         <div class="btn" data-type="pressure">Pressure</div>
                         <div class="btn" data-type="wind">Wind</div>
                     </div>
+                    <svg class="graph" id="my_dataviz" viewBox="10 -20 1000 450" preserveAspectRatio="none">
+
+                    </svg>
                     <div class="hourly-data">
                         <div class="item">
                             <div class="icon-hourly">
@@ -125,7 +131,7 @@
                             <div class="forecast-text"></div>
                             <div class="forecast-hour"></div>
                         </div>
-                        <div class="item">
+                        <div class="item last">
                             <div class="icon-hourly">
                                 <img src="" alt="">
                             </div>
@@ -198,3 +204,8 @@
 </body>
 
 </html>
+
+
+<!-- 
+<div>Icons made by <a href="https://www.flaticon.com/authors/nikita-golubev" title="Nikita Golubev">Nikita Golubev</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> -->
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> -->

@@ -41,7 +41,7 @@ export class APIrequest {
       console.log('dt', dt);
       // Display current weather data
       temp.innerHTML = main.temp + `<sup>°C</sup>`;
-      icon.src = `http://openweathermap.org/img/w/${weather[0].icon}.png`;
+      icon.src = `../src/img/icons/png/${weather[0].icon}.png`;
       weatherInfo.innerHTML = `
           <p>Pressure: <span>${main.pressure} hPa</span></p>
           <p>Humidity: <span>${main.humidity} %</span></p>
@@ -62,7 +62,7 @@ export class APIrequest {
       const showHourlyData = (type) => {
         const items = document.getElementsByClassName('item');
         for (let i = 0; i < items.length; i++) {
-          items[i].querySelector('.icon-hourly img').src = `http://openweathermap.org/img/w/${list[i]['weather'][0].icon}.png`;
+          items[i].querySelector('.icon-hourly img').src = `../src/img/icons/png/${list[i]['weather'][0].icon}.png`;
           items[i].querySelector('.forecast-hour').innerHTML = `${moment.unix(list[i].dt).format('HH:mm')}`;
           items[i].querySelector('.forecast-text').innerHTML = `${list[i]['weather'][0]['description']}`;
           if(type !== 'wind'){
@@ -103,7 +103,8 @@ export class APIrequest {
       const nextDays = document.getElementsByClassName('forecast-item');
       for (let i = 0; i < nextDays.length; i++){
         nextDays[i].querySelector('.date').innerHTML = moment.unix(dayData[i].dt).format('dddd D.MM');
-        nextDays[i].querySelector('img').src = `http://openweathermap.org/img/w/${dayData[i]['weather'][0].icon}.png`;
+        nextDays[i].querySelector('img').src = `../src/img/icons/png/${dayData[i]['weather'][0].icon}.png`;
+        // nextDays[i].querySelector('img').src = `http://openweathermap.org/img/w/${dayData[i]['weather'][0].icon}.png`;
         nextDays[i].querySelector('.day-temp').innerHTML = Math.floor(dayData[i].main.temp) + "°";
         nextDays[i].querySelector('.night-temp').innerHTML = Math.floor(nightData[i].main.temp) + "°";
         nextDays[i].querySelector('.text-info').innerHTML = dayData[i]['weather'][0]['description'];
@@ -152,4 +153,5 @@ export const clock = () => {
     const time = moment().format('HH:mm:ss');
     timeDisplay.innerHTML = time;
   }, 1000)
+  
 }

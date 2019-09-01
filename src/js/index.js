@@ -5,6 +5,7 @@ import { load_ } from './localStore.js';
 import {APIrequest, init, showMeWeather} from './APIrequest';
 import './citiesSearch.js';
 import { imageChange } from './imageChange.js';
+import './graph.js';
 
 
 const search = document.getElementById('search')

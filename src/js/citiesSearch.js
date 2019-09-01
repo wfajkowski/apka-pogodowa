@@ -4,20 +4,20 @@ const finder = new CitiesFinder();
 const input = document.querySelector('.input');
 const selectedPlace = document.querySelector('.sugestedList');
 const searchButton = document.getElementById('search');
-var val;
-var latitude;
-var longitude;
+let val;
+let latitude;
+let longitude;
 
 function display() {
     finder.getCities(this.value);
 }
 
-function setCityId() {
+function setCityId(e) {
     finder.getCityId(selectedPlace);
+    window.onclick = (e) => e.onblur = selectedPlace.style.visibility = "hidden";
 }
 
 export function returnCityId(id, lat, lon) {
-    console.log(id, lat, lon);
     val = id;
     latitude = lat;
     longitude = lon;

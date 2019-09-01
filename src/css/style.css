@@ -318,7 +318,7 @@ button:active {
 .today-weather-hourly,
 .weather-forecast {
     border: 1px solid black;
-    width: 80vw;
+    /* width: 80vw; */
     margin: 35px auto;
 }
 
@@ -338,7 +338,7 @@ button:active {
     padding: 20px;
 }
 
-.container h2 {
+.container .weatherfor {
     grid-area: weather-header;
 }
 

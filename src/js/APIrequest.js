@@ -102,7 +102,7 @@ export class APIrequest {
 
       const nextDays = document.getElementsByClassName('forecast-item');
       for (let i = 0; i < nextDays.length; i++){
-        nextDays[i].querySelector('.date').innerHTML = moment.unix(dayData[i].dt).format('dddd D');
+        nextDays[i].querySelector('.date').innerHTML = moment.unix(dayData[i].dt).format('dddd D.MM');
         nextDays[i].querySelector('img').src = `http://openweathermap.org/img/w/${dayData[i]['weather'][0].icon}.png`;
         nextDays[i].querySelector('.day-temp').innerHTML = Math.floor(dayData[i].main.temp) + "°";
         nextDays[i].querySelector('.night-temp').innerHTML = Math.floor(nightData[i].main.temp) + "°";

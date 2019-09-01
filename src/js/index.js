@@ -7,11 +7,11 @@ import './citiesSearch.js';
 
 
 const search = document.getElementById('search')
-init();
+init('metric');
 
 
 document.querySelector('#find-me').addEventListener('click', geoFindMe);
 search.addEventListener('click', save_)
 window.onload = load_()
 
-search.addEventListener('click', showMeWeather);
+search.addEventListener('click', showMeWeather.bind(this, 'metric'));

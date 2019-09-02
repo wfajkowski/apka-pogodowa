@@ -3,7 +3,7 @@ export class APIrequest {
   // API request constructor
   constructor(city, typeOfRequest, units) {
     const defaultCity = 'wroclaw';
-    this.url = 'http://api.openweathermap.org/data/2.5/';
+    this.url = 'https://api.openweathermap.org/data/2.5/';
     this.appId = '15863c9657f4883dbb63c41d778aa851';
     this.city = city || defaultCity;
     this.typeOfRequest = typeOfRequest;
@@ -104,7 +104,7 @@ export class APIrequest {
       for (let i = 0; i < nextDays.length; i++){
         nextDays[i].querySelector('.date').innerHTML = moment.unix(dayData[i].dt).format('dddd D.MM');
         nextDays[i].querySelector('img').src = `../src/img/icons/png/${dayData[i]['weather'][0].icon}.png`;
-        // nextDays[i].querySelector('img').src = `http://openweathermap.org/img/w/${dayData[i]['weather'][0].icon}.png`;
+        // nextDays[i].querySelector('img').src = `https://openweathermap.org/img/w/${dayData[i]['weather'][0].icon}.png`;
         nextDays[i].querySelector('.day-temp').innerHTML = Math.floor(dayData[i].main.temp) + "°";
         nextDays[i].querySelector('.night-temp').innerHTML = Math.floor(nightData[i].main.temp) + "°";
         nextDays[i].querySelector('.text-info').innerHTML = dayData[i]['weather'][0]['description'];

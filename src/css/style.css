@@ -381,6 +381,17 @@ button:focus{
     min-width: 540px;
 }
 
+.unit-type {
+    font-size: 24px;
+    line-height: 28px;
+    cursor: pointer;
+}
+
+.unit-type.active {
+    font-weight: 600;
+    font-size: 26px;
+}
+
 .current-weather {
     grid-template-areas: 'temp info';
     padding: 0 !important;
@@ -448,7 +459,7 @@ button:focus{
     grid-auto-flow: column;
 }
 .today-weather-hourly {
-    height: 450px;
+    /* height: 450px; */
     margin: 20px;
     padding: 0 !important;
 }
@@ -465,10 +476,12 @@ button:focus{
     cursor: pointer;
     height: 30px;
     width: 115px;
+    transition: .5s;
 }
 
 .today-weather-hourly .btn.active {
-    background-color: #fff;
+    background-color: #2196F3;
+    color: #fff;
 }
 .today-weather-hourly .graph {
     height: 250px;

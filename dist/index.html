@@ -55,6 +55,7 @@
             </div>
             <div class="weather">
                 <h3>Current weather</h3>
+                <p><span class="unit-type active" data-type="metric">C</span> / <span class="unit-type" data-type="imperial">F</span></p>
                 <section class="current-weather">
                     <div class="today-weather">
                         <p class="time"></p>
@@ -79,9 +80,12 @@
                         <div class="btn" data-type="pressure">Pressure</div>
                         <div class="btn" data-type="wind">Wind</div>
                     </div>
-                    <svg class="graph" id="my_dataviz" viewBox="10 -20 1000 450" preserveAspectRatio="none">
+                    <!-- <svg class="graph" id="my_dataviz" viewBox="10 -20 1000 450" preserveAspectRatio="none">
 
-                    </svg>
+                    </svg> -->
+                    <canvas id="weather-chart">
+
+                    </canvas>
                     <div class="hourly-data">
                         <div class="item">
                             <div class="icon-hourly">

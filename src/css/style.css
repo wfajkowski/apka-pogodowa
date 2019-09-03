@@ -10,7 +10,9 @@ body {
     background-color: rgb(145, 145, 145);
     margin: 0;
 }
-
+main {
+    width: 100%;
+}
 /*temporary styles start*/
 header {
     
@@ -19,7 +21,8 @@ header {
     background-image: url('http://placehold.it/300&text=banner1');
     background-repeat: no-repeat;  
     height: 900px;
-    min-width: 600px;
+    min-width: 360px;
+    width: 100%;
 }
 
 .searching-box {
@@ -155,7 +158,7 @@ nav {
     border-bottom: 4px solid rgba(0, 0, 0, 0.527);
     box-shadow: 0px 5px 20px black;
     width: 100%;
-    min-width: 600px;
+    min-width: 360px;
     height: 60px;
     position: absolute;
 }
@@ -337,7 +340,7 @@ button:focus{
 .weatherfor h2 {
     border-bottom: 5px dotted white;
     font-size: 40px;
-    min-width: 540px;
+    min-width: 360px;
     margin: 30px 0px;
 }
 .weather h3{
@@ -353,6 +356,8 @@ button:focus{
 }
 
 .container {
+    width: 100%;
+    min-width: 360px;
     display: grid;
     grid-template-columns: 10% repeat(3, 1fr) 10%;
     text-align: center;
@@ -367,9 +372,10 @@ button:focus{
     display: grid;
     border: 3px solid black;
     border-radius: 5px;
-    margin: 20px 0;
-    padding: 20px 0;
+    margin: 25px 0;
+    padding: 0;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .container .weatherfor {
@@ -378,7 +384,6 @@ button:focus{
 
 .container .weather {
     grid-area: weather-data;
-    min-width: 540px;
 }
 
 .unit-type {
@@ -406,7 +411,7 @@ button:focus{
 .current-weather .today-weather {
     width: 50%;
     background-color: rgba(255, 255, 255, 0.644);
-    min-width: 170px;
+    min-width: 157px;
 }
 .current-weather-info {
     background-color: rgba(0, 0, 0, 0.281);
@@ -415,7 +420,7 @@ button:focus{
     width: 90%;
     height: 282px;
     max-width: 270px;
-    min-width: 200px;
+    min-width: 197px;
     right: 0;
     float: right;
     position: absolute;
@@ -471,11 +476,13 @@ button:focus{
 
 .today-weather-hourly .btn {
     border: 1px solid #000;
-    padding: 5px 10px;
+    padding: 5px 5px;
     border-radius: 5px;
     cursor: pointer;
-    height: 30px;
-    width: 115px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    height: auto;
+    width: 100px;
     transition: .5s;
 }
 
@@ -495,11 +502,14 @@ button:focus{
 }
 .hourly-data{
     font-size: 0.6rem;
+    grid-template-columns: repeat(8, 1fr);
 }
 .hourly-data .item {
-    padding: 0 5px;
-    width: 12,75%;
-    border: 1px solid red;
+    padding: 10px 0;
+    border-top: 1px solid rgb(146, 146, 146);
+}
+.hourly-data .item:hover {
+    background-color: #a8a8a8;
 }
 
 p.night-temp {
@@ -515,7 +525,6 @@ p.night-temp {
     background-repeat: no-repeat;
     width: 100%;
     background-position: 0 90%;
-    margin-bottom: 10px;
     box-sizing: border-box;
 }
 .forecast-field {
@@ -533,9 +542,6 @@ body  {
 }
 
 @media (max-width: 400px) {
-    header {
-        width: 100%;
-    }
     .searching-box {
         top: 150px;
     }
@@ -577,8 +583,5 @@ body  {
         right: 25px;
     }
 }
-@media (max-width: 600px) {
-    .container section {
-        width: 120%;
-    }
-}
+/* @media (max-width: 600px) {
+} */

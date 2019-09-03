@@ -368,7 +368,8 @@ button:focus{
     border: 3px solid black;
     border-radius: 5px;
     margin: 20px 0;
-    padding: 20px;
+    padding: 20px 0;
+    width: 100%;
 }
 
 .container .weatherfor {
@@ -501,7 +502,8 @@ p.night-temp {
     background-repeat: no-repeat;
     width: 100%;
     background-position: 0 90%;
-    margin: 10px 0;
+    margin-bottom: 10px;
+    box-sizing: border-box;
 }
 .forecast-field {
     width: 20%;
@@ -515,4 +517,55 @@ p.night-temp {
 }
 body  {
     background-color: #fff;
+}
+
+@media (max-width: 400px) {
+    header {
+        width: 100%;
+    }
+    .searching-box {
+        top: 150px;
+    }
+    .checkmark {
+        right: -25px;
+    }
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 'weather-header weather-header weather-header'
+            'weather-data weather-data weather-data'
+    }
+}
+
+@media (min-width: 401px) and (max-width: 800px) {
+    .searching-box {
+        top: 250px;
+    }
+    .checkmark {
+        right: -25px;
+    }
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 'weather-header weather-header weather-header'
+            'weather-data weather-data weather-data'
+    }
+}
+
+
+@media (min-width: 801px) and (max-width: 1000px) {
+
+    .checkmark {
+        right: -25px;
+    }
+}
+
+@media (min-width: 1001px)  {
+
+    .checkmark {
+        right: 25px;
+    }
+}
+@media (max-width: 600px) {
+    .container section {
+        width: 120%;
+    }
 }

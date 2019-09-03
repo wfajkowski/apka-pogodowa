@@ -17,6 +17,7 @@ export function imageChange(){
     if(hour > 16) {
     document.querySelector("header").style.backgroundImage=afternoon[random];
     document.querySelector(".current-weather").style.backgroundImage=sunnyday[random];
+    document.querySelector("body").style.backgroundColor="rgba(200, 200, 200, 0.644)";
   }else {
     document.querySelector("header").style.backgroundImage=sunnyday[random];
     document.querySelector(".current-weather").style.backgroundImage=afternoon[random];

@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Handlee&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Nunito|Quicksand&display=swap');
+
 
 html {
     font-size: 20px;
-    font-family: 'Handlee', cursive;
+    font-family: 'Nunito', sans-serif;
 }
-
 body {
     background-color: rgb(145, 145, 145);
     margin: 0;
@@ -12,23 +13,23 @@ body {
 
 /*temporary styles start*/
 header {
-
-    width: auto;
-    height: 100vh;
+    
     background-position: center;
     background-size: cover;
     background-image: url('http://placehold.it/300&text=banner1');
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;  
+    height: 900px;
+    min-width: 600px;
 }
 
 .searching-box {
-    background-color: rgba(0, 0, 0, 0.445);
-    border: 3px solid black;
+    background-color: rgba(0, 0, 0, 0.568);
+    border: 3px solid rgba(0, 0, 0, 0.753);
 
     width: 30%;
     position: relative;
     display: block;
-    top: 25vh;
+    top: 22vh;
     margin: 0 auto;
     min-width: 340px;
     padding: 20px 1%;
@@ -55,6 +56,7 @@ header {
     color: white;
     top: 50%;
     display: block;
+    font-family: 'Handlee';
 }
 
 .searching-text h5 {
@@ -65,15 +67,19 @@ header {
     top: 50%;
     display: block;
 }
+.searching-text{
+    text-shadow: 0px 0px 30px rgb(0, 0, 0);
+}
 
 .search-form {
     position: relative;
     min-width: 290px;
     display: grid;
     padding: 0;
-    grid-template-areas: ". . . . . ."
+    margin-right: 10px;
+    grid-template-areas: " . . . . . . "
         ". search-bar search-bar search-bar search-bar ."
-        " . . . . . ."
+        " . . . . . . "
         ". sugestedList sugestedList sugestedList sugestedList ."
         ". . find-me search . .";
     grid-template-columns: repeat(1fr, 6);
@@ -109,12 +115,11 @@ header {
 #search-bar {
     height: 15px;
     width: 93%;
-    min-width: 285px;
-    position: relative;
+    min-width: 285px;    
 }
 
 #search-bar::placeholder {
-    color: rgba(255, 255, 255, 0.575);
+    color: rgba(250, 250, 250, 0.705);
 }
 
 .input-field {
@@ -146,11 +151,13 @@ li {
 
 /* navbar */
 nav {
-    background-color: rgba(0, 0, 0, 0.719);
-    border-bottom: 5px solid black;
-    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.842);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.527);
+    box-shadow: 0px 5px 20px black;
+    width: 100%;
+    min-width: 600px;
     height: 60px;
-    position: fixed;
+    position: absolute;
 }
 
 nav h3 {
@@ -159,6 +166,7 @@ nav h3 {
     margin: 5px 25px 5px 0px;
     float: right;
     right: 15px;
+    font-family: 'Handlee';
 }
 
 nav img {
@@ -172,8 +180,8 @@ nav img {
 /*  custom checkbox */
 .container-checkbox input {
     margin: 0;
-    position: relative;
-    top: 27px;
+    position: inherit;
+    top: 0;
     right: 10%;
     cursor: pointer;
     opacity: 0;
@@ -184,20 +192,24 @@ nav img {
 .checkmark {
     position: absolute;
     top: 30px;
-    right: 10%;
+    right: 0;
     height: 25px;
     width: 25px;
-    background-color: #eee;
-    border: rgb(99, 99, 99) solid 1px;
+    float: right;
+    background-color: rgba(238, 238, 238, 0.185);
+    border: rgba(207, 207, 207, 0.479) solid 2px;
     border-radius: 50%;
+
 }
 
 .container-checkbox:hover input~.checkmark {
     background-color: #ccc;
+    transition: .5s;
 }
 
 .container-checkbox input:checked~.checkmark {
     background-color: #2196F3;
+    transition: .5s;
 }
 
 .checkmark:after {
@@ -227,66 +239,68 @@ button {
     display: inline-block;
     border: none;
     text-decoration: none;
-    background: #919191;
+    background: #777777;
     color: #ffffff;
+    
     font-family: sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
     cursor: pointer;
     text-align: center;
     transition: background 250ms ease-in-out,
         transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
+    border: 1px solid rgba(0, 0, 0, 0.438);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.692);
+    font-family: 'Nunito', sans-serif;
 }
 
 button:hover,
-button:focus {
+button:active {
     background: #2196F3;
 }
-
-button:focus {
-    outline: 1px solid #fff;
-    outline-offset: -4px;
-}
-
 button:active {
-    transform: scale(0.99);
+    transform: scale(0.96);
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
+button:focus{
+    border: none;
+    outline: none;
 }
 
 #search-bar {
-    border: 1px solid white;
-    -webkit-box-shadow:
-        inset 0 0 8px rgba(0, 0, 0, 0.1),
-        0 0 16px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow:
-        inset 0 0 8px rgba(0, 0, 0, 0.1),
-        0 0 16px rgba(0, 0, 0, 0.1);
-    box-shadow:
-        inset 0 0 8px rgba(0, 0, 0, 0.1),
-        0 0 16px rgba(0, 0, 0, 0.1);
+    /* border: 1px solid rgb(0, 0, 0); */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.603);
     padding: 15px;
-    background: rgba(0, 0, 0, 0.349);
-    margin: 0 0 10px 0;
+    background: rgba(255, 255, 255, 0.103);
+    margin: 0 1% 10px 1%;
     color: #fff;
     font-size: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.158);
+    font-family: 'Nunito', sans-serif;
+    position: relative;
 }
 
 #search-bar:focus {
-    border: 1px solid white;
-    background: rgba(255, 255, 255, 0.103);
+    background: rgba(255, 255, 255, 0.24);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.486);
+    outline: none;
+    transition: .5s;
 }
 
 /* tooltip */
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 100px;
+    width: 90px;
     bottom: 15px;
     background-color: rgba(0, 0, 0, 0.575);
     color: #fff;
     text-align: center;
     border-radius: 6px;
     padding: 2px 0;
-
+    font-size: 16px;
+  
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
@@ -294,6 +308,14 @@ button:active {
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
+  }
+#main-icon{
+    width: 65px;
+    height: 65px;
+}
+.forecast-item > img{
+    width: 65px;
+    height: 65px;
 }
 
 
@@ -307,13 +329,19 @@ button:active {
 /* body */
 .weatherfor {
     text-align: center;
-    width: 80vh;
+    width: auto;
     margin: auto;
+    display: inline-block;
 }
 
 .weatherfor h2 {
     border-bottom: 5px dotted white;
     font-size: 40px;
+    min-width: 540px;
+    margin: 30px 0px;
+}
+.weather h3{
+    margin-top: 0;
 }
 
 .actual-weather,
@@ -326,12 +354,15 @@ button:active {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 10% repeat(3, 1fr) 10%;
     text-align: center;
     grid-template-areas: '. weather-header weather-header weather-header .'
         '. weather-data weather-data weather-data .'
 }
-
+.container img {
+    width: 40px;
+    height: 40px;
+}
 .container section {
     display: grid;
     border: 3px solid black;
@@ -346,14 +377,36 @@ button:active {
 
 .container .weather {
     grid-area: weather-data;
+    min-width: 540px;
 }
 
 .current-weather {
-    grid-template-areas: 'temp . . info';
+    grid-template-areas: 'temp info';
+    padding: 0 !important;
+    background-size: cover;
+    background-position: 0 90%;
+    position: relative;
 }
 
 .current-weather span {
     font-weight: 600;
+}
+.current-weather .today-weather {
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.644);
+    min-width: 170px;
+}
+.current-weather-info {
+    background-color: rgba(0, 0, 0, 0.281);
+    color: #fff;
+    padding: 32px 0;
+    width: 90%;
+    height: 282px;
+    max-width: 270px;
+    min-width: 200px;
+    right: 0;
+    float: right;
+    position: absolute;
 }
 
 .current-weather .flex-container {
@@ -385,7 +438,7 @@ button:active {
 }
 
 .weather-forecast {
-    grid-auto-flow: column;
+    grid-auto-flow: row;
 }
 
 .today-weather-hourly .hourly-data,
@@ -393,9 +446,15 @@ button:active {
     display: grid;
     grid-auto-flow: column;
 }
+.today-weather-hourly {
+    height: 450px;
+    margin: 20px;
+    padding: 0 !important;
+}
 
 .today-weather-hourly .buttons {
     justify-content: space-around;
+    margin-top: 15px;
 }
 
 .today-weather-hourly .btn {
@@ -403,18 +462,57 @@ button:active {
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
+    height: 30px;
+    width: 115px;
 }
 
 .today-weather-hourly .btn.active {
     background-color: #fff;
+}
+.today-weather-hourly .graph {
+    height: 250px;
+    border: 1px solid red;
+    padding-top: 20px;
 }
 
 .day-night-temp p {
     display: inline-block;
     font-weight: 600;
 }
+.hourly-data{
+    font-size: 0.6rem;
+}
+.hourly-data .item {
+    padding: 0 5px;
+    width: 12,75%;
+    border: 1px solid red;
+}
 
 p.night-temp {
     font-size: 0.8rem;
     font-weight: 500;
+}
+.forecast-item {
+    border: 1px solid rgba(0, 0, 0, 0.596);
+    background-color: #2196f3;
+    width: 100%;
+    min-width: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: 0 90%;
+    margin: 10px 0;
+}
+.forecast-field {
+    width: 20%;
+    height: 100%;
+    padding: 20px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.507);
+}
+.graph {
+    width: 100%;
+}
+body  {
+    background-color: #fff;
 }

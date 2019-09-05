@@ -7,6 +7,8 @@ import './citiesSearch.js';
 import { imageChange } from './imageChange.js';
 import './graph.js';
 import { speakToSearch, stopSpeechRecognition } from './speakToSearch';
+import './dailyWeatherBackground.js'
+
 
 const search = document.getElementById('search')
 init('metric');

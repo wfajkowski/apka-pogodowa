@@ -5,14 +5,15 @@
 html {
     font-size: 20px;
     font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
     background-color: rgb(145, 145, 145);
     margin: 0;
-    position: inherit;
-    width: 100vw;
+    width: 100%;
     grid-template-columns: 1fr;
+    display: grid;
 }
 
 header {
@@ -21,6 +22,7 @@ header {
     background-image: url('http://placehold.it/300&text=banner1');
     background-repeat: no-repeat;
     height: 100vh;
+    overflow: hidden;
     min-width: 360px;
 }
 
@@ -327,9 +329,9 @@ button:focus {
 /* body */
 .weatherfor {
     text-align: center;
-    width: auto;
+ 
     margin: auto;
-    display: inline-block;
+   
 }
 
 .weatherfor h2 {
@@ -353,11 +355,11 @@ button:focus {
 
 .container {
     min-width: 360px;
-    display: grid;
-    grid-template-columns: 10% 1fr 10%;
+    margin: 0 10%;
+    width: 80%;
+    display: block;
+    grid-template-columns: 1fr;
     text-align: center;
-    grid-template-areas: '. weather-header .'
-        '. weather-data .';
     box-sizing: border-box;
 }
 
@@ -367,7 +369,6 @@ button:focus {
 }
 
 .container section {
-    display: grid;
     border: 3px solid black;
     border-radius: 5px;
     margin: 25px 0;
@@ -401,6 +402,7 @@ button:focus {
     background-size: cover;
     background-position: 0 90%;
     position: relative;
+    display: grid !important;
 }
 
 .current-weather span {
@@ -571,9 +573,8 @@ body {
     }
 
     .container {
-        grid-template-columns: 1fr;
-        grid-template-areas: 'weather-header'
-            'weather-data';
+        margin: 0;
+        width: 100%;
     }
 }
 
@@ -596,9 +597,8 @@ body {
     }
 
     .container {
-        grid-template-columns: 1fr;
-        grid-template-areas: 'weather-header'
-            'weather-data';
+        margin: 0;
+        width: 100%;
     }
 }
 
@@ -610,9 +610,8 @@ body {
     }
 
     .container {
-        grid-template-columns: 1fr;
-        grid-template-areas: 'weather-header'
-            'weather-data';
+        margin: 0;
+        width: 100%;
     }
 }
 

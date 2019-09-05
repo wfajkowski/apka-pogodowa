@@ -6,32 +6,33 @@ html {
     font-size: 20px;
     font-family: 'Nunito', sans-serif;
 }
+
 body {
     background-color: rgb(145, 145, 145);
     margin: 0;
+    position: inherit;
+    width: 100vw;
+    grid-template-columns: 1fr;
 }
 
-/*temporary styles start*/
 header {
-    
     background-position: center;
     background-size: cover;
     background-image: url('http://placehold.it/300&text=banner1');
-    background-repeat: no-repeat;  
-    height: 900px;
-    min-width: 600px;
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-width: 360px;
 }
 
 .searching-box {
     background-color: rgba(0, 0, 0, 0.568);
     border: 3px solid rgba(0, 0, 0, 0.753);
-
-    width: 30%;
+    width: 25%;
     position: relative;
     display: block;
-    top: 22vh;
+    top: 25vh;
     margin: 0 auto;
-    min-width: 340px;
+    min-width: 330px;
     padding: 20px 1%;
     box-shadow: 0px 0px 20px black;
 }
@@ -67,7 +68,8 @@ header {
     top: 50%;
     display: block;
 }
-.searching-text{
+
+.searching-text {
     text-shadow: 0px 0px 30px rgb(0, 0, 0);
 }
 
@@ -115,7 +117,7 @@ header {
 #search-bar {
     height: 15px;
     width: 93%;
-    min-width: 285px;    
+    min-width: 285px;
 }
 
 #search-bar::placeholder {
@@ -145,7 +147,8 @@ li {
     margin: 0;
 }
 
-.name:hover, .name:active {
+.name:hover,
+.name:active {
     background-color: #2196f3;
 }
 
@@ -155,7 +158,7 @@ nav {
     border-bottom: 4px solid rgba(0, 0, 0, 0.527);
     box-shadow: 0px 5px 20px black;
     width: 100%;
-    min-width: 600px;
+    min-width: 360px;
     height: 60px;
     position: absolute;
 }
@@ -169,7 +172,7 @@ nav h3 {
     font-family: 'Handlee';
 }
 
-nav img {
+nav .img {
     height: 50px;
     margin: 5px 0 5px 20px;
 }
@@ -241,7 +244,6 @@ button {
     text-decoration: none;
     background: #777777;
     color: #ffffff;
-    
     font-family: sans-serif;
     font-size: 0.9rem;
     cursor: pointer;
@@ -259,12 +261,14 @@ button:hover,
 button:active {
     background: #2196F3;
 }
+
 button:active {
     transform: scale(0.96);
     border: 1px solid #fff;
     box-sizing: border-box;
 }
-button:focus{
+
+button:focus {
     border: none;
     outline: none;
 }
@@ -300,7 +304,7 @@ button:focus{
     border-radius: 6px;
     padding: 2px 0;
     font-size: 16px;
-  
+
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
@@ -308,23 +312,17 @@ button:focus{
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
-  }
-#main-icon{
+}
+
+#main-icon {
     width: 65px;
     height: 65px;
 }
-.forecast-item > img{
+
+.forecast-item>.img {
     width: 65px;
     height: 65px;
 }
-
-
-
-
-
-
-
-
 
 /* body */
 .weatherfor {
@@ -337,10 +335,11 @@ button:focus{
 .weatherfor h2 {
     border-bottom: 5px dotted white;
     font-size: 40px;
-    min-width: 540px;
+    min-width: 360px;
     margin: 30px 0px;
 }
-.weather h3{
+
+.weather h3 {
     margin-top: 0;
 }
 
@@ -353,22 +352,28 @@ button:focus{
 }
 
 .container {
+    min-width: 360px;
     display: grid;
-    grid-template-columns: 10% repeat(3, 1fr) 10%;
+    grid-template-columns: 10% 1fr 10%;
     text-align: center;
-    grid-template-areas: '. weather-header weather-header weather-header .'
-        '. weather-data weather-data weather-data .'
+    grid-template-areas: '. weather-header .'
+        '. weather-data .';
+    box-sizing: border-box;
 }
-.container img {
+
+.container .img {
     width: 40px;
     height: 40px;
 }
+
 .container section {
     display: grid;
     border: 3px solid black;
     border-radius: 5px;
-    margin: 20px 0;
-    padding: 20px;
+    margin: 25px 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .container .weatherfor {
@@ -377,7 +382,17 @@ button:focus{
 
 .container .weather {
     grid-area: weather-data;
-    min-width: 540px;
+}
+
+.unit-type {
+    font-size: 24px;
+    line-height: 28px;
+    cursor: pointer;
+}
+
+.unit-type.active {
+    font-weight: 600;
+    font-size: 26px;
 }
 
 .current-weather {
@@ -391,11 +406,13 @@ button:focus{
 .current-weather span {
     font-weight: 600;
 }
+
 .current-weather .today-weather {
     width: 50%;
     background-color: rgba(255, 255, 255, 0.644);
-    min-width: 170px;
+    min-width: 157px;
 }
+
 .current-weather-info {
     background-color: rgba(0, 0, 0, 0.281);
     color: #fff;
@@ -403,7 +420,7 @@ button:focus{
     width: 90%;
     height: 282px;
     max-width: 270px;
-    min-width: 200px;
+    min-width: 197px;
     right: 0;
     float: right;
     position: absolute;
@@ -446,8 +463,9 @@ button:focus{
     display: grid;
     grid-auto-flow: column;
 }
+
 .today-weather-hourly {
-    height: 450px;
+    /* height: 450px; */
     margin: 20px;
     padding: 0 !important;
 }
@@ -459,16 +477,21 @@ button:focus{
 
 .today-weather-hourly .btn {
     border: 1px solid #000;
-    padding: 5px 10px;
+    padding: 5px 5px;
     border-radius: 5px;
     cursor: pointer;
-    height: 30px;
-    width: 115px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    height: auto;
+    width: 100px;
+    transition: .5s;
 }
 
 .today-weather-hourly .btn.active {
-    background-color: #fff;
+    background-color: #2196F3;
+    color: #fff;
 }
+
 .today-weather-hourly .graph {
     height: 250px;
     border: 1px solid red;
@@ -479,19 +502,26 @@ button:focus{
     display: inline-block;
     font-weight: 600;
 }
-.hourly-data{
+
+.hourly-data {
     font-size: 0.6rem;
+    grid-template-columns: repeat(8, 1fr);
 }
+
 .hourly-data .item {
-    padding: 0 5px;
-    width: 12,75%;
-    border: 1px solid red;
+    padding: 10px 0;
+    border-top: 1px solid rgb(146, 146, 146);
+}
+
+.hourly-data .item:hover {
+    background-color: #a8a8a8;
 }
 
 p.night-temp {
     font-size: 0.8rem;
     font-weight: 500;
 }
+
 .forecast-item {
     border: 1px solid rgba(0, 0, 0, 0.596);
     background-color: #2196f3;
@@ -499,20 +529,106 @@ p.night-temp {
     min-width: 150px;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;
-    background-position: 0 90%;
-    margin: 10px 0;
+    background-position: 0 60%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    grid-template-rows: 255px;
+    grid-template-areas: 'info img';
 }
+
 .forecast-field {
-    width: 20%;
-    height: 100%;
-    padding: 20px;
+    width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.507);
+    grid-area: info;
 }
+
 .graph {
     width: 100%;
 }
-body  {
+
+body {
     background-color: #fff;
 }
+
+@media (max-width: 400px) {
+    .searching-box {
+        top: 80px;
+        background-color: rgba(0, 0, 0, 0.342);
+    }
+
+    #search-bar {
+        width: 90%;
+    }
+
+    header {
+        height: 570px;
+    }
+
+    .checkmark {
+        right: -25px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'weather-header'
+            'weather-data';
+    }
+}
+
+@media (min-width: 401px) and (max-width: 800px) {
+    .searching-box {
+        top: 130px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    header {
+        height: 670px;
+    }
+
+    #search-bar {
+        width: 90%;
+    }
+
+    .checkmark {
+        right: -25px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'weather-header'
+            'weather-data';
+    }
+}
+
+
+@media (min-width: 801px) and (max-width: 1000px) {
+
+    .checkmark {
+        right: -25px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'weather-header'
+            'weather-data';
+    }
+}
+
+@media (min-width: 1001px) {
+
+    .checkmark {
+        right: 0;
+    }
+}
+
+@media (min-width: 1201px) {
+
+    .checkmark {
+        right: 10px;
+    }
+}
+
+/* @media (max-width: 600px) {
+} */

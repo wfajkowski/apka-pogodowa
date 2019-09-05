@@ -1,3 +1,4 @@
+import dailyWeatherBackground from './dailyWeatherBackground';
 export const moment = require('moment');
 export class APIrequest {
   // API request constructor
@@ -115,6 +116,8 @@ export class APIrequest {
         nextDays[i].querySelector('.day-temp').innerHTML = Math.floor(dayData[i].main.temp) + "°";
         nextDays[i].querySelector('.night-temp').innerHTML = Math.floor(nightData[i].main.temp) + "°";
         nextDays[i].querySelector('.text-info').innerHTML = dayData[i]['weather'][0]['description'];
+        const icon = `${dayData[i]['weather'][0].icon}`;
+        await dailyWeatherBackground(icon, i);
       }
     }
   }

@@ -6,6 +6,7 @@ import {init, showMeWeather, changeUnits} from './showMeWeather.js';
 import './citiesSearch.js';
 import { imageChange } from './imageChange.js';
 import './graph.js';
+import './dailyWeatherBackground.js'
 
 
 const search = document.getElementById('search')

@@ -2,11 +2,11 @@ import '../css/style.css';
 import { geoFindMe } from './geolocation.js';
 import { save_ } from './localStore.js';
 import { load_ } from './localStore.js';
-import {init, showMeWeather, changeUnits} from './showMeWeather.js';
+import { init, showMeWeather, changeUnits } from './showMeWeather.js';
 import './citiesSearch.js';
 import { imageChange } from './imageChange.js';
 import './graph.js';
-
+import { speakToSearch, stopSpeechRecognition } from './speakToSearch';
 
 const search = document.getElementById('search')
 init('metric');
@@ -22,4 +22,8 @@ search.addEventListener('click', () => {
     showMeWeather.bind(this, unitType)();
 });
 
+const searchBar = document.querySelector('#search-bar');
+
+searchBar.addEventListener('focus', speakToSearch);
+searchBar.addEventListener('blur', stopSpeechRecognition);
 changeUnits();

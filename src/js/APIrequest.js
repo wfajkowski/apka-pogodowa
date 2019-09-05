@@ -25,11 +25,14 @@ export class APIrequest {
     const sunrise = document.querySelector(".sunrise span");
     const sunset = document.querySelector(".sunset span");
     let unit = this.units;
-    let unitSymbol = '';
+    let tempUnit = '';
+    let windUnit = '';
     if(unit === 'metric'){
-      unitSymbol = '°C';
+      tempUnit = '°C';
+      windUnit = 'm/s';
     } else {
-      unitSymbol = 'F';
+      tempUnit = 'F';
+      windUnit = 'm/h';
     }
     // Actual weather
     if (this.typeOfRequest === 'weather') {
@@ -46,14 +49,14 @@ export class APIrequest {
       console.log('wind', wind);
       console.log('dt', dt);
       // Display current weather data
-      temp.innerHTML = main.temp + `<sup>${unitSymbol}</sup>`;
+      temp.innerHTML = Math.round(main.temp * 10) / 10 + `<sup>${tempUnit}</sup>`;
       icon.src = `../src/img/icons/png/${weather[0].icon}.png`;
       weatherInfo.innerHTML = `
           <p>Pressure: <span>${main.pressure} hPa</span></p>
           <p>Humidity: <span>${main.humidity} %</span></p>
-          <p>Temp min: <span>${main.temp_min} ${unitSymbol}</span></p>
-          <p>Temp max: <span>${main.temp_max} ${unitSymbol}</span></p>
-          <p>Wind speed: <span>${wind.speed} m/s</span></p>
+          <p>Temp min: <span>${Math.round(main.temp_min * 10) / 10} ${tempUnit}</span></p>
+          <p>Temp max: <span>${Math.round(main.temp_max * 10) / 10} ${tempUnit}</span></p>
+          <p>Wind speed: <span>${Math.round(wind.speed * 10) / 10} ${windUnit}</span></p>
       `;
       weatherTxt.innerHTML = weather[0].main;
       sunrise.innerHTML = moment.unix(sys.sunrise).format('HH:mm');
@@ -72,9 +75,9 @@ export class APIrequest {
           items[i].querySelector('.forecast-hour').innerHTML = `${moment.unix(list[i].dt).format('HH:mm')}`;
           items[i].querySelector('.forecast-text').innerHTML = `${list[i]['weather'][0]['description']}`;
           if(type !== 'wind'){
-            items[i].querySelector('.temp-hourly').innerHTML = `${Math.floor(list[i]['main'][type])}`;
+            items[i].querySelector('.temp-hourly').innerHTML = `${Math.round(list[i]['main'][type] * 10) / 10}`;
           } else {
-            items[i].querySelector('.temp-hourly').innerHTML = `${list[i]['wind'].speed}`;
+            items[i].querySelector('.temp-hourly').innerHTML = `${Math.round(list[i]['wind'].speed * 10) / 10}`;
           }
         }
         const hourlyDataDivs = document.querySelectorAll('.hourly-data .item .temp-hourly');
@@ -83,7 +86,7 @@ export class APIrequest {
         } else if (type === "pressure"){
           hourlyDataDivs.forEach(item => item.append(" hPa"));
         } else {
-          hourlyDataDivs.forEach(item => item.append(" m/s"));
+          hourlyDataDivs.forEach(item => item.append(` ${windUnit}`));
         }
       }
       showHourlyData('temp');

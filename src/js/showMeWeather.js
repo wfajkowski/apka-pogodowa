@@ -31,7 +31,9 @@ export const showMeWeather = async (unit) => {
     await forecastLocation.displayData();
     let currentCity = cityName.slice(0, 1).toUpperCase() + cityName.slice(1);
     document.querySelector('.current-city').textContent = currentCity;
-    
+    const forecastButtons = document.querySelectorAll('.buttons .btn');
+    forecastButtons.forEach(btn => btn.classList.remove('active'));
+    forecastButtons[0].classList.add('active');
     console.log('Aktualne miasto:', currentCity);
     drawChart();
 }
@@ -45,6 +47,9 @@ export const changeUnits = () => {
             unitBtns.forEach(btn => btn.classList.remove('active'));
             e.target.classList.add('active');
             showMeWeather(unitType);
+            const forecastButtons = document.querySelectorAll('.buttons .btn');
+            forecastButtons.forEach(btn => btn.classList.remove('active'));
+            forecastButtons[0].classList.add('active');
         });
     });
 }

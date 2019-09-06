@@ -26,6 +26,6 @@ search.addEventListener('click', () => {
 
 const searchBar = document.querySelector('#search-bar');
 
-searchBar.addEventListener('focus', speakToSearch);
+searchBar.addEventListener('click', speakToSearch);
 searchBar.addEventListener('blur', stopSpeechRecognition);
 changeUnits();

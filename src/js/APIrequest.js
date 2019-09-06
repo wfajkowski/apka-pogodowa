@@ -13,7 +13,7 @@ export class APIrequest {
   async makeRequest() {
     const request = await fetch(
       `${this.url}${this.typeOfRequest}?q=${this.city}&APPID=${this.appId}&units=${this.units}`
-    )
+    );
     return request.json();
   }
 
@@ -36,8 +36,8 @@ export class APIrequest {
       windUnit = 'm/h';
     }
     // Actual weather
-    try {
-      if (this.typeOfRequest === 'weather') {
+    if (this.typeOfRequest === 'weather') {
+      try {
         const {
           main,
           sys,
@@ -69,7 +69,12 @@ export class APIrequest {
         } else {
           document.querySelector('.polish-city').textContent = '';
         }
-      } else if (this.typeOfRequest === 'forecast') { // weather forecast
+      } catch (err) {
+        console.log("Error: Invalid data input.");
+        return alert("Plese enter a valid city");
+      }
+    } else if (this.typeOfRequest === 'forecast') { // weather forecast
+      try {
         const {
           list
         } = await this.makeRequest();
@@ -96,7 +101,7 @@ export class APIrequest {
           } else {
             hourlyDataDivs.forEach(item => item.append(` ${windUnit}`));
           }
-        }
+        };
         showHourlyData('temp');
 
         const forecastButtons = document.querySelectorAll('.buttons .btn');
@@ -107,16 +112,16 @@ export class APIrequest {
             e.target.classList.add('active');
             await showHourlyData(dataType);
             drawChart();
-          })
-        })
+          });
+        });
 
         // Display next days forecast
         const dayData = list.filter(item => {
           return (moment.unix(item.dt).format('HH') === '14');
-        })
+        });
         const nightData = list.filter(item => {
           return (moment.unix(item.dt).format('HH') === '02');
-        })
+        });
 
         const nextDays = document.getElementsByClassName('forecast-item');
         for (let i = 0; i < nextDays.length; i++) {
@@ -129,9 +134,9 @@ export class APIrequest {
           const icon = `${dayData[i]['weather'][0].icon}`;
           await dailyWeatherBackground(icon, i);
         }
+      } catch (err) {
+        console.log("Error: Invalid data input.");
       }
-    } catch (err) {
-      console.log("Error: Invalid data input.");
     }
   }
 }

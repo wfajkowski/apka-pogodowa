@@ -10,13 +10,13 @@ export const speakToSearch = () => {
 
     try {
         recognition.addEventListener('result', e => {
-            console.log(e.results);
+            // console.log(e.results);
             const transcript = Array.from(e.results)
                 .map(result => result[0])
                 .map(result => result.transcript)
                 .join('');
             txtInput.value = transcript;
-            console.log(transcript);
+            // console.log(transcript);
             if (e.results[0].isFinal) {
                 let unitType = document.querySelector('.unit-type.active').dataset.type;
                 showMeWeather.bind(this, unitType)();
@@ -34,5 +34,5 @@ export const stopSpeechRecognition = () => {
     recognition.addEventListener('end', recognition.stop);
     recognition.stop();
     window.SpeechRecognition = null;
-    console.log('odpalam');
+    // console.log('odpalam');
 }

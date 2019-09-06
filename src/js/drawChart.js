@@ -28,7 +28,7 @@ export const drawChart = () => {
                 display: false,
             },
             responsive: true,
-            events: ['click'],
+            events: null,
             layout: {
                 padding: {
                     left: 20,

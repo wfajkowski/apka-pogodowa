@@ -1,19 +1,20 @@
-import { showMeWeather } from './showMeWeather.js';
+import {
+    showMeWeather
+} from './showMeWeather.js';
 let recognition = null;
-export const speakToSearch = (type) => {
-    
-        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        recognition = new SpeechRecognition();
-        recognition.interimResults = true;
-        const txtInput = document.querySelector('#search-bar');
-    
+export const speakToSearch = () => {
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    recognition = new SpeechRecognition();
+    recognition.interimResults = true;
+    var txtInput = document.querySelector('#search-bar');
+
     try {
         recognition.addEventListener('result', e => {
             console.log(e.results);
             const transcript = Array.from(e.results)
-            .map(result => result[0])
-            .map(result => result.transcript)
-            .join('');
+                .map(result => result[0])
+                .map(result => result.transcript)
+                .join('');
             txtInput.value = transcript;
             console.log(transcript);
             if (e.results[0].isFinal) {
@@ -21,7 +22,8 @@ export const speakToSearch = (type) => {
                 showMeWeather.bind(this, unitType)();
             }
         })
-        recognition.addEventListener('end', recognition.start);
+        // recognition.addEventListener('end', recognition.stop);
+        // recognition.addEventListener('end', recognition.start);
         recognition.start();
     } catch (err) {
         console.error(err);
@@ -29,7 +31,8 @@ export const speakToSearch = (type) => {
 }
 
 export const stopSpeechRecognition = () => {
-    document.activeElement.blur();
+    recognition.addEventListener('end', recognition.stop);
     recognition.stop();
+    window.SpeechRecognition = null;
     console.log('odpalam');
 }

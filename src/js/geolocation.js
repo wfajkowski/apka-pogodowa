@@ -8,7 +8,8 @@ export function geoFindMe() {
       fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyAUNTHswAMTYmVOmomwMblD5L8dG-bnkvk`)
      .then(resp => resp.json())
      .then(resp => {
-      field.value = resp.results[8].address_components[0].long_name
+       console.log(resp)
+      field.value = resp.results[1].address_components[0].long_name
       console.log(resp)
      })
     }

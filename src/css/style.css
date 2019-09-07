@@ -619,19 +619,22 @@ body {
     }
 }
 
-@media (min-width: 1001px) {
+@media (min-width: 1001px) and (max-width: 1200px) {
 
     .checkmark {
         right: 0;
     }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1201px) and (max-width: 1600px) {
 
     .checkmark {
         right: 10px;
     }
 }
 
-/* @media (max-width: 600px) {
-} */
+@media (min-width: 1601px)  {
+    .checkmark {
+        right: 30px;
+    }
+}

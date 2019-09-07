@@ -1,5 +1,6 @@
 import { moment, APIrequest } from './APIrequest';
 import { drawChart } from './drawChart';
+import { scroll } from './scroll.js';
 // Setting default city and fetch data for it
 export const init = async (unit) => {
     let defaultCity = 'wroclaw';
@@ -23,6 +24,7 @@ export const init = async (unit) => {
     catch(err){
         console.log("Error: Invalid data input.");
     }
+    scroll();
     drawChart();
     clock();
 }

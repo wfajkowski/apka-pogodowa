@@ -109,7 +109,7 @@ header {
     overflow: scroll;
     overflow-x: hidden;
     grid-area: sugestedList;
-    max-height: 300px;
+    max-height: 200px;
     min-width: 250px;
     visibility: hidden;
 }
@@ -578,6 +578,10 @@ body {
     .forecast-item {
         font-size: 16px;
     }
+
+    .sugestedList{
+        margin-right: 0;
+    }
 }
 
 @media (min-width: 401px) and (max-width: 800px) {
@@ -604,6 +608,9 @@ body {
     }
     .forecast-item {
         font-size: 18px;
+    }
+    .sugestedList{
+        margin-right: 0;
     }
 }
 
